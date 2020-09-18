@@ -31,7 +31,7 @@ namespace RPSLSGame
             
             while (check == false)
             {
-                Console.WriteLine("Please choose opponent \n1)Human \n2)Computer");
+                Console.WriteLine("\nPlease choose opponent \n1)Human \n2)Computer");
                 int input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
                 {
@@ -53,7 +53,7 @@ namespace RPSLSGame
             bool check = false;
             while (check == false)
             {
-                Console.WriteLine("How long would you like the game to be?");
+                Console.WriteLine("\nHow long would you like the game to be?");
                 Console.WriteLine("1) Best of 3?");
                 Console.WriteLine("2) Best of 7?");
                 Console.WriteLine("3) Best of 11?");
@@ -78,7 +78,7 @@ namespace RPSLSGame
 
         public int ShowGestureOptions(Player player)
         {
-            Console.WriteLine("Please select a gesture");
+            Console.WriteLine($"{player.name} please select a gesture");
             for(int i = 0; i < player.gestures.Count; i++)
             {
                 Console.WriteLine($"{i+1}) {player.gestures[i].name}");
@@ -112,17 +112,17 @@ namespace RPSLSGame
         {
             if (i < 2)
             {
-                Console.WriteLine($"{player1.name} {player1.gestureList[2].name} beats {player2.name} {player1.gestureList[i].name}. Player 1 wins!");
+                Console.WriteLine($"{player1.name} {player1.gestureList[2].name} beats {player2.name} {player1.gestureList[i].name}. {player1.name} wins!");
                 player1.score++;
             }
             else if (i > 2)
             {
-                Console.WriteLine($"{player2.name} {player1.gestureList[i].name} beats {player1.name} {player1.gestureList[2].name}. Player 2 wins!");
+                Console.WriteLine($"{player2.name} {player1.gestureList[i].name} beats {player1.name} {player1.gestureList[2].name}. {player2.name} wins!");
                 player2.score++;
             }
             else
             {
-                Console.WriteLine($"{player1.gestureList[3]} vs. {player1.gestureList[i]} It's a tie!");
+                Console.WriteLine($"{player1.gestureList[2].name} vs. {player1.gestureList[i].name} It's a tie!");
             }
         }
 
@@ -152,6 +152,7 @@ namespace RPSLSGame
             {
                 Console.WriteLine($"{player2.name} wins {player2.score}-{player1.score}!!!");
             }
+            Console.ReadLine();
         }
     }
 }

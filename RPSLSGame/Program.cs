@@ -14,7 +14,6 @@ namespace RPSLSGame
 
             platform.RunGame();
 
-            Console.ReadLine();
         }
     }
 }

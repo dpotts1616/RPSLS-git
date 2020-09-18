@@ -9,7 +9,7 @@ namespace RPSLSGame
     class Human:Player
     {
         //member variables
-        
+
 
         //constructor
         public Human(string name)
@@ -20,7 +20,7 @@ namespace RPSLSGame
         //methods
         public override int GetPlayer2Choice(Display display, Player player)
         {
-
+            Console.Clear();
             int i = display.ShowGestureOptions(player);
             return i;
         }
