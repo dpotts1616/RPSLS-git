@@ -17,5 +17,11 @@ namespace RPSLSGame
         }
 
         //methods
+        public override int GetPlayer2Choice(Display display, Player player)
+        {
+            Random rand = new Random();
+            int i = rand.Next(0, 6);
+            return i;
+        }
     }
 }

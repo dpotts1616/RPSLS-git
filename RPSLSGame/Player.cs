@@ -104,10 +104,7 @@ namespace RPSLSGame
             gestureList.Clear();
         }
 
-        //public virtual string GetPlayer2Choice()
-        //{
-
-        //}
+        public abstract int GetPlayer2Choice(Display display, Player player);
 
     }
 }

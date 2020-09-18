@@ -18,10 +18,11 @@ namespace RPSLSGame
         }
 
         //methods
-        //public override string GetPlayer2Choice()
-        //{
+        public override int GetPlayer2Choice(Display display, Player player)
+        {
 
-        //    return base.GetPlayer2Choice();
-        //}
+            int i = display.ShowGestureOptions(player);
+            return i;
+        }
     }
 }

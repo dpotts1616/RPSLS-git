@@ -26,26 +26,21 @@ namespace RPSLSGame
         //Run Game
         public void RunGame()
         {
-            
-            //display welcome screen and rules
+            display.DisplayWelcomeScreen();
+
             ChooseOpponent();
             ChooseSeriesLength();
-
-            //loop for rounds
             do
             {
                 ChooseGestureList(player1);
-                //split between computer and human
-                Gesture opponentGesture = GetPlayer2Choice(player2);
+                Gesture opponentGesture = GetPlayer2Gesture(player2, display);
                 int compare = CompareGestures(player1, opponentGesture);
                 display.DeclareRoundWinner(compare, player1, player2);
                 display.ShowScore(player1, player2);
                 player1.ResetBoard();
             } while (player1.score < (seriesLength / 2) && player2.score < (seriesLength / 2));
-            
 
-
-
+            display.DeclareGameWinner(player1, player2);
         }
 
 
@@ -87,11 +82,23 @@ namespace RPSLSGame
 
         }
 
-        public Gesture GetPlayer2Choice(Player player2)
+        public Gesture GetPlayer2Gesture(Player player2, Display display)
         {
-            int choice = display.ShowGestureOptions(player2);
-            Gesture gesture = player2.gestures[choice-1];
+            int choice = player2.GetPlayer2Choice(display, player2);
+            Gesture gesture = player2.gestures[choice - 1];
             return gesture;
+            //if (player2.name == "Computer")
+            //{
+            //    int choice = player2.GetPlayer2Choice();
+            //    Gesture gesture = player2.gestures[choice - 1];
+            //    return gesture;
+            //}
+            //else
+            //{
+            //    int choice = display.ShowGestureOptions(player2);
+            //    Gesture gesture = player2.gestures[choice - 1];
+            //    return gesture;
+            //}
         }
 
 

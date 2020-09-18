@@ -13,6 +13,18 @@ namespace RPSLSGame
         //constructor
 
         //methods
+        public void DisplayWelcomeScreen()
+        {
+            Console.WriteLine("Welcome to ROCK, PAPER, SCISSORS, LIZARD, SPOCK!!!");
+            Console.WriteLine("The rules are simple:");
+            Console.WriteLine("1) Rock crushes Scissors and Lizards");
+            Console.WriteLine("2) Paper covers Rock and disproves Spock");
+            Console.WriteLine("3) Scissors cuts Paper and decapitates Lizard");
+            Console.WriteLine("4) Lizard poisons Spock and eats Paper");
+            Console.WriteLine("5) Spock smashes Scissors and vaporizes Rock");
+            Console.WriteLine("\nLet's Play!");
+        }
+
         public int ChooseOpponent()
         {
             bool check = false;
@@ -128,7 +140,18 @@ namespace RPSLSGame
             {
                 Console.WriteLine($"The game is tied {player1.score}-{player2.score}");
             }
-            
+        }
+
+        public void DeclareGameWinner(Player player1, Player player2)
+        {
+            if (player1.score > player2.score)
+            {
+                Console.WriteLine($"{player1.name} wins {player1.score}-{player2.score}!!!");
+            }
+            else if (player1.score < player2.score)
+            {
+                Console.WriteLine($"{player2.name} wins {player2.score}-{player1.score}!!!");
+            }
         }
     }
 }
